@@ -1,0 +1,33 @@
+name: custom viz
+
+on:
+ workflow-dispatch:
+  inputs:
+      action:
+        description: 'value'
+        required: true
+        default: 'value'
+        options:
+          - 'value'
+       
+
+jobs:
+  build-and-publish:
+    name: Build and Publish Nerdpack
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Setup - Checkout"
+        uses: actions/checkout@v2.1.0
+
+      - name: "Setup - Terraform CLI"
+        uses: hashicorp/setup-terraform@v1
+    
+      - name: Install NR1 CLI
+        run: |
+          curl -s https://cli.nr-ext.net/installer.sh | sudo bash
+
+      - name: Publish Nerdpack
+        run: nr1 nerdpack:publish
+
+      - name: Subscribe Nerdpack
+        run: nr1 nerdpack:subscribe
