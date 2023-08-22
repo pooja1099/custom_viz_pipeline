@@ -29,6 +29,12 @@ jobs:
 
       - name: Publish Nerdpack
         run: nr1 nerdpack:publish
+        with:
+         api_key: ${{ secrets.NEW_RELIC_API_KEY }}
+         account_id: 3930388
 
       - name: Subscribe Nerdpack
         run: nr1 nerdpack:subscribe
+        with:
+         api_key: ${{ secrets.NEW_RELIC_API_KEY }}
+         account_id: 3930388
