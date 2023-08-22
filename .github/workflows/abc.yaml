@@ -19,8 +19,8 @@ jobs:
 
       - name: "Setup - Terraform CLI"
         uses: hashicorp/setup-terraform@v1
-        with:
-         api_key: ${{secrets.NEW_RELIC_API_KEY}}
+        # with:
+        #  api_key: ${{secrets.NEW_RELIC_API_KEY}}
          
        
       - name: Install NR1 CLI
@@ -29,6 +29,8 @@ jobs:
 
       # - name: Change to Nerdpack directory
       #   run: cd 
+      - name: Configure NR1 CLI API key
+        run: nr1 profile:setup --api-key ${{secrets.NEW_RELIC_API_KEY}}
       
 
       - name: Publish Nerdpack
