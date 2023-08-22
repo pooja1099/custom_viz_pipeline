@@ -31,7 +31,7 @@ jobs:
       #   run: cd 
       - name: Configure NR1 CLI API key
         # run: nr1 profile:setup --api-key ${{secrets.NEW_RELIC_API_KEY}}
-        run: nr1 profiles:add --name {account-slug} --api-key ${{secrets.NEW_RELIC_API_KEY}} --region {us}
+        run: nr1 profiles:add --name {account-slug} --api-key ${{secrets.NEW_RELIC_API_KEY}} --region {us|eu} 
       
 
       - name: Publish Nerdpack
