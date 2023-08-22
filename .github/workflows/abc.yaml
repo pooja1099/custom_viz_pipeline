@@ -30,7 +30,7 @@ jobs:
       # - name: Change to Nerdpack directory
       #   run: cd 
       - name: Configure NR1 CLI API key
-        run: nr1 profile:setup --api-key NRAK-FOGCBM7T60ZPVLPUV2Q8XR2IIGR
+        run: nr1 profile:setup --api-key  ${{secrets.NEW_RELIC_API_KEY}}
 
       - name: Publish Nerdpack
         run: nr1 nerdpack:publish
