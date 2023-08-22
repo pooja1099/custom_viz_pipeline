@@ -20,7 +20,7 @@ jobs:
       - name: "Setup - Terraform CLI"
         uses: hashicorp/setup-terraform@v1
         with:
-         api_key: "NRAK-FOGCBM7T60ZPVLPUV2Q8XR2IIGR"
+         api_key: ${{secrets.NEW_RELIC_API_KEY}}
          
        
       - name: Install NR1 CLI
