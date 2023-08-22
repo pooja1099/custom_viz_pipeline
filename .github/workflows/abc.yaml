@@ -24,8 +24,8 @@ jobs:
         run: |
           curl -s https://cli.nr-ext.net/installer.sh | sudo bash
 
-      - name: Change to Nerdpack directory
-        run: cd..
+      # - name: Change to Nerdpack directory
+      #   run: cd 
 
       - name: Publish Nerdpack
         run: nr1 nerdpack:publish
