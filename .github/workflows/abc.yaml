@@ -1,15 +1,14 @@
 name: custom viz
 
 on:
- workflow-dispatch:
-  inputs:
-      action:
-        description: 'value'
-        required: true
-        default: 'value'
-        options:
-          - 'value'
-       
+ pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+#  workflow-dispatch:
+#   inputs: 
 
 jobs:
   build-and-publish:
